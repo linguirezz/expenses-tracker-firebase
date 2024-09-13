@@ -5,9 +5,9 @@ import { useRegisterUpdateContext} from '../utils/authContext.jsx';
 import { app } from '../utils/fireBaseConfig.js';
 import axios from 'axios'
 // import { app } from '../utils/fireBaseConfig.js'; TODO : turn on if you need something
-import {getAuth,createUserWithEmailAndPassword} from'firebase/auth'
+
 function Register (){
-  const auth = getAuth()
+ 
   const setRegis = useRegisterUpdateContext()
   
     const [credential, setCredential] = useState({
@@ -23,16 +23,11 @@ function Register (){
           [e.target.name]: e.target.value,
         });
       };
-     const createAccountFirebase = ()=>{
-      createUserWithEmailAndPassword(auth,credential.email,credential.password).then( response =>{
-        const user = response.user
-      console.log(`user has been made : ${user}`)}
-      )
-     }
+     
       const handleSubmit= async (e)=>{
         e.preventDefault();
         try {
-         await createAccountFirebase()
+      
             
              await axios.post(`http://localhost:3150/auth/register`,credential,{
                 headers: {

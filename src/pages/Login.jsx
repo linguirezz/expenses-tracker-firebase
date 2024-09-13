@@ -4,11 +4,10 @@ import { useState } from 'react';
 import axios from 'axios'
 import { app } from '../utils/fireBaseConfig.js';
 import { useAuthUpdateContext} from '../utils/authContext'
-import {getAuth,signInWithEmailAndPassword,GoogleAuthProvider} from'firebase/auth'
+
 
 function Login() {
-  const googleProvider = new GoogleAuthProvider()
-  const auth = getAuth()
+ 
   const setAuth = useAuthUpdateContext()
   const [credential, setCredential] = useState({
     email: '',
@@ -22,15 +21,11 @@ function Login() {
       [e.target.name]: e.target.value,
     });
   };
-  const signinWithFirebase = () =>{
-    signInWithEmailAndPassword(auth,credential.email,credential.password).then((response) =>{
-      const user = response.user
-      console.log(user)}) 
-  }
+ 
   const handleSubmit= async (e)=>{
     e.preventDefault();
     try {
-        signinWithFirebase()
+    
          await axios.post(`http://localhost:3150/auth/login`,credential,{
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
