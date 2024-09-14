@@ -29,7 +29,7 @@ function Register (){
         try {
       
             
-             await axios.post(`http://localhost:3150/auth/register`,credential,{
+             await axios.post(`https://expenses-tracker-api-evfz.vercel.app/auth/register`,credential,{
                 headers: {
                   'Content-Type': 'application/x-www-form-urlencoded'
                 }

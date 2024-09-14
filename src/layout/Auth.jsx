@@ -33,7 +33,7 @@ function Auth({ header, subheader, form, children, navigation, handleSubmit }) {
           </button>
           <div className="text-[13px] font-[100] my-3">
             <span>{navigation}</span>
-            <Link to='/login' className='text-blue-900'>, Click here!</Link>
+            <Link to='/register' className='text-blue-900'>, Click here!</Link>
           </div>
         </form>
       </div>
