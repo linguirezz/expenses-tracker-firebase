@@ -26,7 +26,7 @@ function Login() {
     e.preventDefault();
     try {
     
-         await axios.post(`https://expenses-tracker-api-3e3x.vercel.app/auth/login`,credential,{
+         await axios.post(`https://expenses-tracker-api-evfz.vercel.app/auth/login`,credential,{
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             }
